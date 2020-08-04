@@ -4,27 +4,13 @@
   
     
     <entry>
-      <title>测试</title>
-      <link href="/2020/07/18/list/"/>
-      <url>/2020/07/18/list/</url>
+      <title>life record of 2020</title>
+      <link href="/2020/08/04/life/life%20record%20of%202020/"/>
+      <url>/2020/08/04/life/life%20record%20of%202020/</url>
       
-        <content type="html"><![CDATA[<p>ascasca</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 测试 </category>
-          
-      </categories>
+        <content type="html"><![CDATA[<p class='p center logo h1'>Volantis</p><h2 id="2020-8月4日"><a href="#2020-8月4日" class="headerlink" title="2020 8月4日"></a>2020 8月4日</h2><p>今天搞好Hexo博客的第一天，使用volantis主题的过程中学到一些新东西，还发现并解决了bug😊，向作者大大提交了issue。</p><div class="note success"><p>Hexo博客get 广州港报表修改 每日吉他练习</p></div>]]></content>
       
       
-        <tags>
-            
-            <tag> PS3 </tag>
-            
-            <tag> Games </tag>
-            
-        </tags>
       
     </entry>
     
