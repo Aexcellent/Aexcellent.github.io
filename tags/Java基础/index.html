@@ -5,6 +5,8 @@
   <!-- SEO相关 -->
   
     
+      <meta name="robots" content="noindex,follow">
+    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -16,11 +18,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>life record of 2020 - 汪晓明的博客</title>
+  <title>Tag: Java基础 - 汪晓明的博客</title>
   
 
-  
-    <meta name="description" content="为了防止日子浑浑噩噩，决定每天给自己找点事做，一并记录自己的成长">
   
 
   <!-- feed -->
@@ -68,7 +68,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover post' style="display: none;">
+    <cover class='cover ' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -154,13 +154,15 @@
 
       <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
     </cover>
-    <header class="l_header no_sidebar shadow blur">
+    <header class="l_header shadow blur">
   <div class='container'>
   <div class='wrapper'>
     <div class='nav-sub'>
       <p class="title"></p>
       <ul class='switcher nav-list-h' id="pjax-header-nav-list">
         <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
       </ul>
     </div>
@@ -447,8 +449,8 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">life record of 2020</div>
+  <div id="pjax-ispage">false</div>
+  <div id="pjax-pageTitle"></div>
   <div id="pjax-enable-cover">true</div>
   
   
@@ -480,12 +482,25 @@
       
       
 
-<div class='l_main no_sidebar'>
-  
 
+<div class='l_main'>
   
-    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+    
       
+  <section class="post-list ">
+    
+      
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
 
 
   <section class='meta'>
@@ -495,11 +510,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h1 class="title">
-    <a href="/2020/08/04/life/Life%20Record%20of%202020/">
-      life record of 2020
+  <h2 class="title">
+    <a href="/2020/08/13/JavaSE/">
+      JavaSE笔记
     </a>
-  </h1>
+  </h2>
 
 
         
@@ -519,12 +534,79 @@
             
           
             
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Java/JavaSE/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Java/JavaSE</p>
+    </a>
+  </div>
+
+
+            
+          
+            
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Aug 4, 2020</p>
+    <p>发布于：Aug 13, 2020</p>
   </a>
 </div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>699 words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>2 min</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/08/13/JavaSE/" class="leancloud_visitors" data-flag-title="JavaSE笔记">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/08/13/JavaSE/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/08/13/JavaSE/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
 
             
           
@@ -537,66 +619,93 @@
   </section>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          
-          
-          <p class='p center logo h1'>2020年成长记录</p>
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div class="note blue"><p>Java基础</p></div>
+      
+    </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2020/08/13/JavaSE/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
+  </section>
+</article>
 
-<h2 id="8月5日"><a href="#8月5日" class="headerlink" title="8月5日"></a>8月5日</h2><p>最后还是用了github仓库做图床，smms虽然免费但是图片啥的放自己这里还是好一点，用jsdelivr加速，还有picgo图床工具和typora配置好，能直接在typora复制图片上传github还蛮好用的。另外，鹿鸣真可爱！火锅真好吃！😭</p>
-<div class="note success"><p>图床</p></div>
+          </div>
+        
+      
+    
+  </section>
+  
+    
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
 
-<div class="gallery ">
-              <p><img src="https://cdn.jsdelivr.net/gh/Aexcellent/cdn/Hexo_blog/img/markdown/image-20200806115414047.png" alt="鹿鸣"><br><img src="https://cdn.jsdelivr.net/gh/Aexcellent/cdn/Hexo_blog/img/markdown/%E9%B9%BF%E9%B8%A3.png" alt="鹿鸣"></p>
-            </div>
-
-<h2 id="8月4日"><a href="#8月4日" class="headerlink" title="8月4日"></a>8月4日</h2><p>今天搞好Hexo博客的第一天，使用volantis主题的过程中学到一些新东西，还发现并解决了bug😊，向作者大大提交了issue。</p>
-<div class="note success"><p>Hexo博客get 广州港报表修改 每日吉他练习</p></div>
-
-<div class="note todo yellow"><p>明天搞下博客图床，图片不能一直用cdn</p></div>
+  
 
 
-
-
-          
-            <div class='article_footer'>
-              
-                
+    
+  
+</div>
+<aside class='l_side'>
+  
   
     
     
 
-
-
-  
-
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-<section class="widget copyright  desktop mobile">
+<section class="widget blogger shadow desktop mobile">
   <div class='content'>
     
-      <blockquote>
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/Aexcellent/cdn/Hexo_blog/img/avatar/avatar.jpg'/>
+        </a>
+      
+    
+    
+    
+      <div class="social-wrapper">
         
           
-            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
           
         
           
-            <p>本文永久链接是：<a href=https://aexcellent.github.io/2020/08/04/life/Life%20Record%20of%202020/>https://aexcellent.github.io/2020/08/04/life/Life%20Record%20of%202020/</a></p>
+            <a href="mailto:1321371086@qq.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
           
         
-      </blockquote>
+          
+            <a href="https://github.com/Aexcellent"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=498898766"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
     
   </div>
 </section>
@@ -606,99 +715,61 @@
   
     
     
-
-<section class="widget qrcode  ">
   
 
-  <div class='content article-entry'>
+  <section class="widget category shadow desktop">
     
-      
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
-        
-          height='64px'
-        ></div>
-      
+  <header>
     
-      
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
-        
-          height='64px'
-        ></div>
-      
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
     
-  </div>
-</section>
-
-  
+  </header>
 
 
-              
-            </div>
-          
-        </div>
+    <div class='content'>
+      <ul class="entry navigation">
         
-          
-
-
-  <section class='meta' id="footer-meta">
-    <div class='new-meta-box'>
-      
+          <li><a class="flat-box"
+            title="/categories/Java/" href="/categories/Java/"
+            id="categoriesJava"
+            ><div class='name'>Java</div><div class='badge'>(1)</div></a></li>
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-07T17:56:05+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 7, 2020</p>
-  </a>
-</div>
-
+          <li><a class="flat-box child"
+            title="/categories/Java/JavaSE/" href="/categories/Java/JavaSE/"
+            id="categoriesJavaJavaSE"
+            ><div class='name'>JavaSE</div><div class='badge'>(1)</div></a></li>
         
-      
+      </ul>
     </div>
   </section>
 
 
-        
-        
-          <div class="prev-next">
-            
-              <a class='prev' href='/2020/08/13/JavaSE/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>JavaSE笔记</p>
-                <p class='content'>Java基础
-
-
-
-语言类型Java属于半编译型半解释型语言，同时是静态语言加准动态语言。
-编译与解释Java文件经Java编译器编译成.class文件，不可被机器直接执行，而是字节码，需要通过...</p>
-              </a>
-            
-            
-              <a class='next' href='/2020/07/18/hello-world/'>
-                <p class='title'>Hello World<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>Fighting!
-
-A Fresh Start
-
-
-
-​        本博客基于Hexo使用Volantis主题搭建。
-​        虽然以前也会记些笔记啦，但是一直没搞个自己的博客，这...</p>
-              </a>
-            
-          </div>
-        
-      </section>
-    </article>
   
 
-
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-</div>
-<aside class='l_side'>
   
+    
+    
+  
+
+  <section class="widget tagcloud shadow desktop mobile">
+    
+  <header>
+    
+      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/Java%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">Java基础</a>
+    </div>
+  </section>
+
+
+  
+
+  
+
 
 </aside>
 

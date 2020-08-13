@@ -16,11 +16,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>life record of 2020 - 汪晓明的博客</title>
+  <title>JavaSE笔记 - 汪晓明的博客</title>
+  
+    <meta name="keywords" content="Java基础">
   
 
   
-    <meta name="description" content="为了防止日子浑浑噩噩，决定每天给自己找点事做，一并记录自己的成长">
+    <meta name="description" content="Java基础">
   
 
   <!-- feed -->
@@ -154,13 +156,15 @@
 
       <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
     </cover>
-    <header class="l_header no_sidebar shadow blur">
+    <header class="l_header shadow blur">
   <div class='container'>
   <div class='wrapper'>
     <div class='nav-sub'>
       <p class="title"></p>
       <ul class='switcher nav-list-h' id="pjax-header-nav-list">
         <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
       </ul>
     </div>
@@ -448,8 +452,11 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">life record of 2020</div>
+  <div id="pjax-pageTitle">JavaSE笔记</div>
   <div id="pjax-enable-cover">true</div>
+  
+  <div id="valine-path">none</div>
+  <div id="valine-placeholder">none</div>
   
   
 </div>
@@ -480,7 +487,7 @@
       
       
 
-<div class='l_main no_sidebar'>
+<div class='l_main'>
   
 
   
@@ -496,8 +503,8 @@
         
           
   <h1 class="title">
-    <a href="/2020/08/04/life/Life%20Record%20of%202020/">
-      life record of 2020
+    <a href="/2020/08/13/JavaSE/">
+      JavaSE笔记
     </a>
   </h1>
 
@@ -519,12 +526,30 @@
             
           
             
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Java/JavaSE/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Java/JavaSE</p>
+    </a>
+  </div>
+
+
+            
+          
+            
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Aug 4, 2020</p>
+    <p>发布于：Aug 13, 2020</p>
   </a>
 </div>
+
+            
+          
+            
+              
 
             
           
@@ -541,23 +566,58 @@
         <div class="article-entry" itemprop="articleBody">
           
           
-          <p class='p center logo h1'>2020年成长记录</p>
+          <div class="note blue"><p>Java基础</p></div>
 
-<h2 id="8月5日"><a href="#8月5日" class="headerlink" title="8月5日"></a>8月5日</h2><p>最后还是用了github仓库做图床，smms虽然免费但是图片啥的放自己这里还是好一点，用jsdelivr加速，还有picgo图床工具和typora配置好，能直接在typora复制图片上传github还蛮好用的。另外，鹿鸣真可爱！火锅真好吃！😭</p>
-<div class="note success"><p>图床</p></div>
+<a id="more"></a>
 
-<div class="gallery ">
-              <p><img src="https://cdn.jsdelivr.net/gh/Aexcellent/cdn/Hexo_blog/img/markdown/image-20200806115414047.png" alt="鹿鸣"><br><img src="https://cdn.jsdelivr.net/gh/Aexcellent/cdn/Hexo_blog/img/markdown/%E9%B9%BF%E9%B8%A3.png" alt="鹿鸣"></p>
-            </div>
+<h2 id="语言类型"><a href="#语言类型" class="headerlink" title="语言类型"></a>语言类型</h2><p>Java属于半编译型半解释型语言，同时是静态语言加准动态语言。</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a><span class='p blue'>编译与解释</span></h3><p>Java文件经Java编译器编译成.class文件，不可被机器直接执行，而是字节码，需要通过Jvm的类装载器、字节码校验器、解释器，才能生成二进制代码被执行。</p>
+<div class="note info">
+            <p class='p subtitle'>编译型语言</p><p>特点：将源代码编译生成二进制代码，可由机器直接运行；执行速度快、效率高，依靠编译器，跨平台性差。</p><p class='p subtitle'>解释型语言</p><p>特点：源代码不进行编译，程序运行时由解释器翻译成二进制代码；执行速度慢、效率低，依靠解释器，跨平台性好。</p>
+          </div>
 
-<h2 id="8月4日"><a href="#8月4日" class="headerlink" title="8月4日"></a>8月4日</h2><p>今天搞好Hexo博客的第一天，使用volantis主题的过程中学到一些新东西，还发现并解决了bug😊，向作者大大提交了issue。</p>
-<div class="note success"><p>Hexo博客get 广州港报表修改 每日吉他练习</p></div>
+<h3 id="-1"><a href="#-1" class="headerlink" title=""></a><span class='p blue'>静态与动态</span></h3><div class="note info">
+            <p class='p subtitle'>静态语言</p><p>特点：在编译时变量的类型可确定。</p><p class='p subtitle'>动态语言</p><p>特点：在编译时变量的类型不可确定，在运行时确定数据类型。</p><p class='p subtitle'>补充</p><p>强类型语言：一旦变量的数据类型被确定，不经过强制转换，变量类型不会改变。</p><p>弱类型语言：一个变量可赋予不同数据类型的值，速度优于强类型语言，但严谨性不足。</p>
+          </div>
 
-<div class="note todo yellow"><p>明天搞下博客图床，图片不能一直用cdn</p></div>
-
-
-
-
+<h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><h3 id="-2"><a href="#-2" class="headerlink" title=""></a><span class='p blue'>注释</span></h3><ol>
+<li><p>行内注释：<code>//</code></p>
+</li>
+<li><p>多行注释：<code>/**/</code></p>
+</li>
+<li><p>文档注释：<code>/** */</code> （使用javadoc命令可生成帮助文档）</p>
+</li>
+</ol>
+<h3 id="-3"><a href="#-3" class="headerlink" title=""></a><span class='p blue'>基本数据类型</span></h3><ul>
+<li><p>整数</p>
+<ul>
+<li>byte：1个字节</li>
+<li>short：2个字节</li>
+<li>int（默认）：4个字节</li>
+<li>long：8个字节</li>
+</ul>
+</li>
+<li><p>浮点数</p>
+<p><strong>金融计算使用BigDecimal</strong></p>
+<ul>
+<li><p>float：4个字节</p>
+</li>
+<li><p>double（默认）：8个字节</p>
+<p><strong>注意： 默认的小数值是double类型的</strong><br>所以 <code>float f = 54.321</code>会出现编译错误，因为54.321的默认类型是 double，其类型长度为64位，超过了float的长度32位，在数字后面<strong>加一个字母f</strong>，直接把该数字声明成float类型<code>float f2 = 54.321f</code>。</p>
+</li>
+</ul>
+</li>
+<li><p>字符</p>
+<p>char：2个字节，值用单引号表示</p>
+<div class="note info">
+            <p class='p subtitle'>编码字符集</p><p>ASCII：美国信息交换标准码，每字符使用一字节保存，共256个。</p><p>Unicode：包含世界上所有字符</p><p>GBK编码：是指中国的中文字符，包含简体和繁体。</p><p class='p subtitle'>字符集编码</p><p>UTF16：每个字符对应一个二进制编码，使用两个字节保存。</p><p>英文字母A，用ASCII编码是十进制的65，二进制的01000001，可用一个字节保存，使用UTF-16标准浪费了一个字节，且存在更多位表示的需要，故出现了UTF-8。</p><p>UTF-8：使用1个字节编码英文字母，3个字节编码汉字，生僻字则为4-6个字节。</p>
+          </div>
+</li>
+<li><p>布尔值</p>
+<p>boolen：1位，虽然布尔型真正存放的数据是0 1，但不能使用0 1进行变量赋值。</p>
+</li>
+</ul>
+<h3 id="-4"><a href="#-4" class="headerlink" title=""></a><span class='p blue'>类型转换</span></h3>
           
             <div class='article_footer'>
               
@@ -593,7 +653,7 @@
           
         
           
-            <p>本文永久链接是：<a href=https://aexcellent.github.io/2020/08/04/life/Life%20Record%20of%202020/>https://aexcellent.github.io/2020/08/04/life/Life%20Record%20of%202020/</a></p>
+            <p>本文永久链接是：<a href=https://aexcellent.github.io/2020/08/13/JavaSE/>https://aexcellent.github.io/2020/08/13/JavaSE/</a></p>
           
         
       </blockquote>
@@ -644,12 +704,91 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-07T17:56:05+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-13T11:56:43+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 7, 2020</p>
+    <p>更新于：Aug 13, 2020</p>
   </a>
 </div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java%E5%9F%BA%E7%A1%80/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Java基础</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://aexcellent.github.io/2020/08/13/JavaSE/&title=JavaSE笔记 - 汪晓明的博客&summary=Java基础"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/Aexcellent/cdn/Hexo_blog/img/logo/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://aexcellent.github.io/2020/08/13/JavaSE/&title=JavaSE笔记 - 汪晓明的博客&summary=Java基础"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/Aexcellent/cdn/Hexo_blog/img/logo/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://aexcellent.github.io/2020/08/13/JavaSE/&title=JavaSE笔记 - 汪晓明的博客&summary=Java基础"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/Aexcellent/cdn/Hexo_blog/img/logo/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>699 words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>2 min</p>
+    </a>
+  </div>
+
 
         
       
@@ -661,33 +800,36 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/08/13/JavaSE/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>JavaSE笔记</p>
-                <p class='content'>Java基础
-
-
-
-语言类型Java属于半编译型半解释型语言，同时是静态语言加准动态语言。
-编译与解释Java文件经Java编译器编译成.class文件，不可被机器直接执行，而是字节码，需要通过...</p>
-              </a>
             
-            
-              <a class='next' href='/2020/07/18/hello-world/'>
-                <p class='title'>Hello World<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>Fighting!
+              <a class='next' href='/2020/08/04/life/Life%20Record%20of%202020/'>
+                <p class='title'>life record of 2020<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>2020年成长记录
 
-A Fresh Start
-
-
-
-​        本博客基于Hexo使用Volantis主题搭建。
-​        虽然以前也会记些笔记啦，但是一直没搞个自己的博客，这...</p>
+8月5日最后还是用了github仓库做图床，smms虽然免费但是图片啥的放自己这里还是好一点，用jsdelivr加速，还有picgo图床工具和typora配置好，能直接在t...</p>
               </a>
             
           </div>
         
       </section>
     </article>
+  
+
+  
+    
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
   
 
 
@@ -699,6 +841,143 @@ A Fresh Start
 </div>
 <aside class='l_side'>
   
+  
+    
+    
+
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/Aexcellent/cdn/Hexo_blog/img/avatar/avatar.jpg'/>
+        </a>
+      
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:1321371086@qq.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/Aexcellent"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=498898766"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category shadow desktop">
+    
+  <header>
+    
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/Java/" href="/categories/Java/"
+            id="categoriesJava"
+            ><div class='name'>Java</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/Java/JavaSE/" href="/categories/Java/JavaSE/"
+            id="categoriesJavaJavaSE"
+            ><div class='name'>JavaSE</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow desktop mobile">
+    
+  <header>
+    
+      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/Java%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">Java基础</a>
+    </div>
+  </section>
+
+
+  
+
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#语言类型"><span class="toc-text">语言类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">编译与解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-1"><span class="toc-text">静态与动态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基础语法"><span class="toc-text">基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#-2"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-3"><span class="toc-text">基本数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-4"><span class="toc-text">类型转换</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
 
 </aside>
 
