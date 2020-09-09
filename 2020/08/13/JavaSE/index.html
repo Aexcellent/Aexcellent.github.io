@@ -591,10 +591,16 @@
 <h3 id="-3"><a href="#-3" class="headerlink" title=""></a><span class='p blue'>基本数据类型</span></h3><ul>
 <li><p>整数</p>
 <ul>
-<li>byte：1个字节</li>
-<li>short：2个字节</li>
-<li>int（默认）：4个字节</li>
-<li>long：8个字节</li>
+<li><p>byte：1个字节</p>
+<div class="note green"><p>1字节的范围是-128到127，原因是在计算机中用补码形式表示二进制数。</p></div>
+</li>
+<li><p>short：2个字节</p>
+</li>
+<li><p>int（默认）：4个字节</p>
+</li>
+<li><p>long：8个字节</p>
+<p>进制转换：0b二进制 0x十六进制 0八进制</p>
+</li>
 </ul>
 </li>
 <li><p>浮点数</p>
@@ -609,6 +615,8 @@
 </li>
 <li><p>字符</p>
 <p>char：2个字节，值用单引号表示</p>
+<p>转义字符： \b 退格    \n 换行    \r 回车    \t 制表符</p>
+<p>换行和回车来源于打字机，回车的作用是回到当前行首，Linux系统每行结尾只有\n，而Windows是\r\n。</p>
 <div class="note info">
             <p class='p subtitle'>编码字符集</p><p>ASCII：美国信息交换标准码，每字符使用一字节保存，共256个。</p><p>Unicode：包含世界上所有字符</p><p>GBK编码：是指中国的中文字符，包含简体和繁体。</p><p class='p subtitle'>字符集编码</p><p>UTF16：每个字符对应一个二进制编码，使用两个字节保存。</p><p>英文字母A，用ASCII编码是十进制的65，二进制的01000001，可用一个字节保存，使用UTF-16标准浪费了一个字节，且存在更多位表示的需要，故出现了UTF-8。</p><p>UTF-8：使用1个字节编码英文字母，3个字节编码汉字，生僻字则为4-6个字节。</p>
           </div>
@@ -617,7 +625,32 @@
 <p>boolen：1位，虽然布尔型真正存放的数据是0 1，但不能使用0 1进行变量赋值。</p>
 </li>
 </ul>
-<h3 id="-4"><a href="#-4" class="headerlink" title=""></a><span class='p blue'>类型转换</span></h3>
+<h3 id="-4"><a href="#-4" class="headerlink" title=""></a><span class='p blue'>类型转换</span></h3><p>自动类型转换 低转高 子类转父类</p>
+<p>强制类型转换 高转低  转换方式：(低类)高类</p>
+<h3 id="-5"><a href="#-5" class="headerlink" title=""></a><span class='p blue'>变量和常量</span></h3><p>变量定义：type varName [= new type() || =value];</p>
+<p>作用域：</p>
+<ul>
+<li>类变量：static修饰的属性，作用于类变量被定义之后；类加载时类变量就已经分配内存空间</li>
+<li>实例变量：在类中被定义的变量，可在类中任意位置访问</li>
+<li>局部变量：方法的参数或者方法中定义的变量，可在方法体中访问</li>
+</ul>
+<p>常量： final关键字，命名全大写</p>
+<p>常见javadoc：@author @version @since @param @return @throws</p>
+<h3 id="-6"><a href="#-6" class="headerlink" title=""></a><span class='p blue'>流程控制</span></h3><ul>
+<li>顺序结构：程序默认结构，自上而下执行</li>
+<li>选择结构：if       if-else      if-else if-else<ul>
+<li>switch：jdk1.7支持String类型<ul>
+<li>case穿透现象：如果没有break语句，那么就会从表达式的值相匹配的case标签处开始执行，一直执行到switch语句的末尾，可利用这种现象进行代码简化。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>循环结构：while     do…while      for      <ul>
+<li>增强for循环：for(type i : arrays)</li>
+</ul>
+</li>
+</ul>
+
           
             <div class='article_footer'>
               
@@ -704,10 +737,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-13T11:56:43+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-24T18:21:27+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 13, 2020</p>
+    <p>更新于：Aug 24, 2020</p>
   </a>
 </div>
 
@@ -779,13 +812,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>699 words</p>
+      <p>1.1k words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>2 min</p>
+      <p>3 min</p>
     </a>
   </div>
 
@@ -799,6 +832,13 @@
         
         
           <div class="prev-next">
+            
+              <a class='prev' href='/2020/09/09/life/Oscar%20Wilde/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Oscar Wilde Quotes</p>
+                <p class='content'>Whenever people agree with me, I always feel I must be wrong.
+每当人们赞同我的时候,我都觉得自己一定错了。
+</p>
+              </a>
             
             
               <a class='next' href='/2020/08/04/life/Life%20Record%20of%202020/'>
@@ -971,7 +1011,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#语言类型"><span class="toc-text">语言类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">编译与解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-1"><span class="toc-text">静态与动态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基础语法"><span class="toc-text">基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#-2"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-3"><span class="toc-text">基本数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-4"><span class="toc-text">类型转换</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#语言类型"><span class="toc-text">语言类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">编译与解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-1"><span class="toc-text">静态与动态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基础语法"><span class="toc-text">基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#-2"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-3"><span class="toc-text">基本数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-4"><span class="toc-text">类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-5"><span class="toc-text">变量和常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-6"><span class="toc-text">流程控制</span></a></li></ol></li></ol>
     </div>
   </section>
 
