@@ -4,11 +4,32 @@
   
     
     <entry>
+      <title>为什么随机变量的方差估计的分母是n-1?</title>
+      <link href="/2020/09/22/statistic/%E6%A0%B7%E6%9C%AC%E6%96%B9%E5%B7%AE/"/>
+      <url>/2020/09/22/statistic/%E6%A0%B7%E6%9C%AC%E6%96%B9%E5%B7%AE/</url>
+      
+        <content type="html"><![CDATA[<a id="more"></a><p>为了保证无偏计算，大数据量下用采样数据计算方差时，是除以n-1而不是n。</p><p><img src="https://cdn.jsdelivr.net/gh/Aexcellent/cdn/Hexo_blog/img/markdown/20180805134010375" alt="推导过程"></p><p>上式第一个比较关键的变换是第四行到第五行。由于第四行中间式子的后半段是样本数据累加，因此可以把$x_i$替换成$\overline{x}$，使累加结果不改变。</p><p>第二个比较关键的变换是<strong>平均数$\overline{x}$的方差，是样本方差的n分之一</strong>。这个可以利用方差变换公式来推导，如下：</p><p><img src="https://cdn.jsdelivr.net/gh/Aexcellent/cdn/Hexo_blog/img/markdown/20180805134912483" alt="方差变换"></p><p><strong>每一个样本$x_i$的方差，都等于样本的总体方差</strong>。</p><p>样本$x_i$代表所有可能出现的情况，每一个$x_1$、$x_2$、$x_3$…都分别可以看作是一个随机变量，而这些随机变量之间没有差别，其分布也跟样本总体分布相同，所以它们的方差自然也是相同的。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 统计学 </category>
+          
+          <category> 多元统计分析 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Oscar Wilde Quotes</title>
       <link href="/2020/09/09/life/Oscar%20Wilde/"/>
       <url>/2020/09/09/life/Oscar%20Wilde/</url>
       
-        <content type="html"><![CDATA[<p>Whenever people agree with me, I always feel I must be wrong.</p><p>每当人们赞同我的时候,我都觉得自己一定错了。</p>]]></content>
+        <content type="html"><![CDATA[<p>Whenever people agree with me, I always feel I must be wrong.</p><p><strong>每当人们赞同我的时候,我都觉得自己一定错了。</strong></p><p>Most people are other people. Their thoughts are someone else’s opinions, lives as mimicry, their passions a quotation.</p><p><strong>大多数人都不是自己，而是别人，他们的思想是他人的观点，他们的生活是一种模仿，他们的激情是一种引证。</strong></p><p>The only difference between the saint and the sinner is that every saint has a past, and every sinner has a future.</p><p><strong>每个圣人都有不可告人的过去，每个罪人都有洁白无瑕的未来。</strong></p><p>Some cause happiness wherever they go; others whenever they go.</p><p><strong>有些人一来大家就开心了;有些人一走大家就开心了。</strong></p><p>Always forgive your enemies， nothing annoys them so much.</p><p><strong>永远原谅你的敌人;没有什么比这个更让他们恼火了。</strong></p><p>Education is an admirable thing, but it is well to remember from time to time that nothing that is worth knowing can be taught.</p><p><strong>教育是令人钦佩的，但要时刻牢记:凡是应当懂得的事，没有一件是可以教会的。</strong></p>]]></content>
       
       
       

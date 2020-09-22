@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Category: Java - 汪晓明的博客</title>
+  <title>为什么随机变量的方差估计的分母是n-1? - 汪晓明的博客</title>
   
 
   
@@ -68,7 +66,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -449,9 +447,12 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">为什么随机变量的方差估计的分母是n-1?</div>
   <div id="pjax-enable-cover">true</div>
+  
+  <div id="valine-path">none</div>
+  <div id="valine-placeholder">none</div>
   
   
 </div>
@@ -482,25 +483,12 @@
       
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -510,11 +498,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/08/13/JavaSE/">
-      JavaSE笔记
+  <h1 class="title">
+    <a href="/2020/09/22/statistic/%E6%A0%B7%E6%9C%AC%E6%96%B9%E5%B7%AE/">
+      为什么随机变量的方差估计的分母是n-1?
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -537,9 +525,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/Java/JavaSE/' rel="nofollow">
+    <a href='/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6/%E5%A4%9A%E5%85%83%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Java/JavaSE</p>
+      <p>统计学/多元统计分析</p>
     </a>
   </div>
 
@@ -550,58 +538,9 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Aug 13, 2020</p>
+    <p>发布于：Sep 22, 2020</p>
   </a>
 </div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>1.1k words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>3 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/13/JavaSE/" class="leancloud_visitors" data-flag-title="JavaSE笔记">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/13/JavaSE/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/13/JavaSE/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
 
             
           
@@ -619,40 +558,289 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <div class="note blue"><p>Java基础</p></div>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/08/13/JavaSE/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <a id="more"></a>
 
-          </div>
+<p>为了保证无偏计算，大数据量下用采样数据计算方差时，是除以n-1而不是n。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Aexcellent/cdn/Hexo_blog/img/markdown/20180805134010375" alt="推导过程"></p>
+<p>上式第一个比较关键的变换是第四行到第五行。由于第四行中间式子的后半段是样本数据累加，因此可以把$x_i$替换成$\overline{x}$，使累加结果不改变。</p>
+<p>第二个比较关键的变换是<strong>平均数$\overline{x}$的方差，是样本方差的n分之一</strong>。这个可以利用方差变换公式来推导，如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Aexcellent/cdn/Hexo_blog/img/markdown/20180805134912483" alt="方差变换"></p>
+<p><strong>每一个样本$x_i$的方差，都等于样本的总体方差</strong>。</p>
+<p>样本$x_i$代表所有可能出现的情况，每一个$x_1$、$x_2$、$x_3$…都分别可以看作是一个随机变量，而这些随机变量之间没有差别，其分布也跟样本总体分布相同，所以它们的方差自然也是相同的。</p>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://aexcellent.github.io/2020/09/22/statistic/%E6%A0%B7%E6%9C%AC%E6%96%B9%E5%B7%AE/>https://aexcellent.github.io/2020/09/22/statistic/%E6%A0%B7%E6%9C%AC%E6%96%B9%E5%B7%AE/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  ">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-22T13:30:52+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Sep 22, 2020</p>
+  </a>
+</div>
+
         
       
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://aexcellent.github.io/2020/09/22/statistic/%E6%A0%B7%E6%9C%AC%E6%96%B9%E5%B7%AE/&title=为什么随机变量的方差估计的分母是n-1? - 汪晓明的博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/Aexcellent/cdn/Hexo_blog/img/logo/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://aexcellent.github.io/2020/09/22/statistic/%E6%A0%B7%E6%9C%AC%E6%96%B9%E5%B7%AE/&title=为什么随机变量的方差估计的分母是n-1? - 汪晓明的博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/Aexcellent/cdn/Hexo_blog/img/logo/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://aexcellent.github.io/2020/09/22/statistic/%E6%A0%B7%E6%9C%AC%E6%96%B9%E5%B7%AE/&title=为什么随机变量的方差估计的分母是n-1? - 汪晓明的博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/Aexcellent/cdn/Hexo_blog/img/logo/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>229 words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>1 min</p>
+    </a>
+  </div>
+
+
+        
+      
+    </div>
   </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/09/09/life/Oscar%20Wilde/'>
+                <p class='title'>Oscar Wilde Quotes<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>Whenever people agree with me, I always feel I must be wrong.
+每当人们赞同我的时候,我都觉得自己一定错了。
+Most people ...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
   
     
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
 
   
 
 
-    
-  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
 
 </div>
 <aside class='l_side'>
@@ -778,6 +966,15 @@
 
 
   
+
+  
+
+  
+    
+    
+
+
+
 
   
 

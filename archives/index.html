@@ -497,6 +497,24 @@
 			          </div>
 		      		
 		          <div class="archive-item archive-post mark">
+		            <a href="/2020/09/22/statistic/%E6%A0%B7%E6%9C%AC%E6%96%B9%E5%B7%AE/">
+		              <time>09-22</time>
+		              <span class="title">
+		                
+		                  为什么随机变量的方差估计的分母是n-1?
+		                
+		                
+										
+										
+		              </span>
+		            </a>
+		          </div>
+						
+	      
+	          
+						
+							
+		          <div class="archive-item archive-post mark">
 		            <a href="/2020/09/09/life/Oscar%20Wilde/">
 		              <time>09-09</time>
 		              <span class="title">
@@ -530,21 +548,6 @@
 						
 	      
 	          
-						
-							
-		          <div class="archive-item archive-post mark">
-		            <a href="/2020/08/04/life/Life%20Record%20of%202020/">
-		              <time>08-04</time>
-		              <span class="title">
-		                
-		                  life record of 2020
-		                
-		                
-										
-										
-		              </span>
-		            </a>
-		          </div>
 						
 	      
 	          
@@ -654,6 +657,16 @@
             id="categoriesJavaJavaSE"
             ><div class='name'>JavaSE</div><div class='badge'>(1)</div></a></li>
         
+          <li><a class="flat-box"
+            title="/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6/" href="/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6/"
+            id="categoriesE7BB9FE8AEA1E5ADA6"
+            ><div class='name'>统计学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6/%E5%A4%9A%E5%85%83%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/" href="/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6/%E5%A4%9A%E5%85%83%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/"
+            id="categoriesE7BB9FE8AEA1E5ADA6E5A49AE58583E7BB9FE8AEA1E58886E69E90"
+            ><div class='name'>多元统计分析</div><div class='badge'>(1)</div></a></li>
+        
       </ul>
     </div>
   </section>
@@ -694,6 +707,59 @@
 
 	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
 	
+
+	
+	    <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
 
 	
 
