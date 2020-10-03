@@ -18,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>分类：Java - 汪晓明的博客</title>
+  <title>分类：最优化 - 汪晓明的博客</title>
   
 
   
@@ -511,8 +511,8 @@
         
           
   <h2 class="title">
-    <a href="/2020/08/13/JavaSE/">
-      JavaSE笔记
+    <a href="/2020/10/02/operational%20search/%E6%97%A0%E7%BA%A6%E6%9D%9F%E9%97%AE%E9%A2%98%E7%9A%84%E6%9C%80%E4%BC%98%E6%80%A7%E6%9D%A1%E4%BB%B6/">
+      无约束问题的最优性条件
     </a>
   </h2>
 
@@ -537,9 +537,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/Java/JavaSE/' rel="nofollow">
+    <a href='/categories/%E8%BF%90%E7%AD%B9%E5%AD%A6/%E6%9C%80%E4%BC%98%E5%8C%96/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Java/JavaSE</p>
+      <p>运筹学/最优化</p>
     </a>
   </div>
 
@@ -550,7 +550,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Aug 13, 2020</p>
+    <p>发布于：Oct 2, 2020</p>
   </a>
 </div>
 
@@ -561,13 +561,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.1k字</p>
+      <p>字数：1.3k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：3分钟</p>
+      <p>时长：6分钟</p>
     </a>
   </div>
 
@@ -580,7 +580,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/2020/08/13/JavaSE/" class="leancloud_visitors" data-flag-title="JavaSE笔记">
+      <span id="/2020/10/02/operational%20search/%E6%97%A0%E7%BA%A6%E6%9D%9F%E9%97%AE%E9%A2%98%E7%9A%84%E6%9C%80%E4%BC%98%E6%80%A7%E6%9D%A1%E4%BB%B6/" class="leancloud_visitors" data-flag-title="无约束问题的最优性条件">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -595,9 +595,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/2020/08/13/JavaSE/#comments">
+  <a href="/2020/10/02/operational%20search/%E6%97%A0%E7%BA%A6%E6%9D%9F%E9%97%AE%E9%A2%98%E7%9A%84%E6%9C%80%E4%BC%98%E6%80%A7%E6%9D%A1%E4%BB%B6/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/13/JavaSE/">0</span>
+    <span class="valine-comment-count" data-xid="/2020/10/02/operational%20search/%E6%97%A0%E7%BA%A6%E6%9D%9F%E9%97%AE%E9%A2%98%E7%9A%84%E6%9C%80%E4%BC%98%E6%80%A7%E6%9D%A1%E4%BB%B6/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -622,16 +622,115 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <div class="note blue"><p>Java基础</p></div>
+        <a id="more"></a>
+
+<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><p>无约束最优化问题定义：</p>
+<p>$$(P) \quad min_x \ f(x)$$</p>
+<p>$$s.t. \quad x \in X$$</p>
+<p>其中$x=(x_1,…,x_n) \in R^n,f(x):R^n \rightarrow R$，且$X$是一个开集（通常$X=R^n$）。</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a><span class='p blue'>可微性</span></h3><p>设$f(x):X \leftarrow R$，其中$X$是$R^n$的开子集。</p>
+<details green open><summary> <p>定理一</p> </summary>
+              <div class='content'>
+              <p>如果存在一个向量$\nabla f(\bar{x})$（$f(x)$在$\bar{x}$处的梯度）使得对$\forall x \in X$满足</p><p>$$f(x)=f(\bar{x})+\nabla f(\bar{x})^t(x-\bar{x})+||x-\bar{x}||\alpha(\bar{x},x-\bar{x})$$</p><p>且$\lim_{y\to 0}{\alpha(\bar{x},y)}=0$，称$f(x)$在$\bar{x} \in X$处可微。</p><div class="note guide green">            <p>梯度向量是由n个偏导数组成的向量。</p><p>$$\nabla f(\bar{x})=(\frac{\partial f(\bar{x})}{\partial x_1},…,\frac{\partial f(\bar{x})}{\partial x_n})^t$$</p><p>$f(x)$在$\bar{x}$处沿方向$d$的方向导数为：</p><p>$$\lim_{ \lambda\to 0 }{ \frac { f( \bar{x}+\lambda d )-f( \bar{x} )}{ \lambda } } = \nabla f( \bar{x} )^t d$$</p>          </div>
+              </div>
+            </details>
+
+<div class="note clear"><p>注：如果$f(x)$在任意$\bar{x} \in X$处都可微，称$f(x)$在$X$上可微。</p></div>
+
+
+
+<details yellow open><summary> <p>定理二</p> </summary>
+              <div class='content'>
+              <p>如果存在一个向量$\nabla f(\bar{x})$和一个$n \times n$的对称矩阵$H(\bar{x})$（$f(x)$在$\bar{x}$处的海森矩阵），使得对$\forall x \in X$，满足</p><p>$$f(x)=f(\bar{x})+\nabla f(\bar{x})^t(x-\bar{x})+\frac{1}{2}(x-\bar{x})^tH(\bar{x})(x-\bar{x})+||x-\bar{x}||^2 \alpha(\bar{x},x-\bar{x})$$</p><p>且$\lim_{y\to 0}{\alpha(\bar{x},y)}=0$，称$f(x)$在$\bar{x} \in X$处二次可微。</p><div class="note guide yellow">            <p>海森矩阵是由二次偏导数组成的矩阵：</p><p>$$H(\bar{x})_{ij}=\frac {\partial ^2 f(\bar{x})}{\partial x_i \partial x_j}$$</p>          </div>
+              </div>
+            </details>
+
+<div class="note clear"><p>注：如果$f(x)$在任意$\bar{x} \in X$处都二次可微，称$f(x)$在$X$上二次可微。</p></div>
+
+
+
+<h3 id="-1"><a href="#-1" class="headerlink" title=""></a><span class='p blue'>半正定和正定矩阵</span></h3><p>一个$n \times n$ 的矩阵$M$ 称为</p>
+<ul>
+<li>正定矩阵，如果对于$\forall x \in R^n$且$x \neq 0$，有$x^tMx &gt; 0$</li>
+<li>半正定矩阵，如果对于$\forall x \in R^n$，有$x^tMx \geq 0$</li>
+<li>负定矩阵，如果对于$\forall x \in R^n$且$x \neq 0$，有$x^tMx &lt; 0$</li>
+<li>半负定矩阵，如果对于$\forall x \in R^n$，有$x^tMx \leq 0$</li>
+<li>不定矩阵，如果存在$ x,y \in R^n$，有$x^tMx &gt; 0$且$y^tMy &lt; 0$</li>
+</ul>
+<h3 id="-2"><a href="#-2" class="headerlink" title=""></a><span class='p blue'>凸集和凸函数</span></h3><p>凸组合定义：</p>
+<p>设$x,y \in R^n, \lambda \in [0,1]$，形如$\lambda x + (1- \lambda )y$的点称为$x,y$的凸组合。</p>
+<div class="note ">
+            <p>$\lambda x + (1- \lambda )y$描述连接点$x,y$的线段</p>
+          </div>
+
+<p>凸集定义：</p>
+<p>如果集合$S \subset R^n$ ，对于$x,y \in S, \lambda \in [0,1]$，有$\lambda x + (1- \lambda )y \in S$，则集合$S$ 称为一个凸集。</p>
+<p>凸函数定义：</p>
+<p>函数$f(x):S \rightarrow R$，其中$S$为非空凸集，如果</p>
+<p>$$f(\lambda x+(1-\lambda)y) \leq \lambda f(x)+(1-\lambda)f(y) \quad \forall x,y \in S,\forall \lambda \in [0,1]$$</p>
+<p>则$f(x)$是一个凸函数。</p>
+<div class="note ">
+            <p>如果$\forall x \neq y 且 \forall \lambda \in (0,1)$，上述不等式严格成立，则$f(x)$是一个严格凸函数。</p>
+          </div>
+
+<h2 id="无约束问题的最优性条件"><a href="#无约束问题的最优性条件" class="headerlink" title="无约束问题的最优性条件"></a>无约束问题的最优性条件</h2><h3 id="-3"><a href="#-3" class="headerlink" title=""></a><span class='p blue'>下降方向</span></h3><p>定义：</p>
+<p>如果对于充分小的$\forall \epsilon &gt; 0$，有</p>
+<p>$$f(\bar{x}+\epsilon \bar{d}) &lt; f(\bar{x})$$</p>
+<p>则称方向$\bar{d}$是$f(x)$在$x=\bar{x}$处的下降方向。</p>
+<details green open><summary> <p>定理</p> </summary>
+              <div class='content'>
+              <p>设$f(x)$在$x=\bar{x}$处可微，如果存在一个向量$d$使得$\nabla f(\bar{x})^t d&lt;0$</p><p>可得对于充分小的$\forall \epsilon &gt; 0$，有$f(\bar{x}+\epsilon \bar{d}) &lt; f(\bar{x})$，$d$是$f(x)$在$x=\bar{x}$处的一个下降方向。</p><p>（由可微性定理一可得证明）</p><p>由此定理可得推论（此为<strong>无约束最小化问题的一阶必要最优性条件</strong>）：</p><p>设$f(x)$在$x=\bar{x}$处可微，如果 $\bar{x}$ 是一个局部极小点，那么$\nabla f(\bar{x})=0$。</p>
+              </div>
+            </details>
+
+<details yellow open><summary> <p>定理（无约束最小化问题的二阶必要最优性条件）</p> </summary>
+              <div class='content'>
+              <p>设$f(x)$在$x=\bar{x}$处二次连续可微，如果 $\bar{x}$ 是一个局部极小点，那么$\nabla f(\bar{x})=0$且$H(\bar{x})$是半正定。</p><p>（由一阶必要最优性条件和可微性定理二由反证法可得证明）</p>
+              </div>
+            </details>
+
+
+
+<h3 id="-4"><a href="#-4" class="headerlink" title=""></a><span class='p blue'>局部极小点充分条件</span></h3><p><strong>设$f(x)$在$x=\bar{x}$处二次可微，如果$\nabla f(\bar{x})=0$且$H(\bar{x})$正定，那么$\bar{x}$ 是一个（严格）局部极小点。</strong></p>
+<p>（由可微性定理二使用反证法可得证明）</p>
+<div class="note"><p>如果$\nabla f(\bar{x})=0$且$H(\bar{x})$负定，那么$\bar{x}$ 是一个局部极大点。</p></div>
+
+<div class="note"><p>如果$\nabla f(\bar{x})=0$且$H(\bar{x})$半正定，那么$\bar{x}$ 不能确定是不是局部极小点。</p></div>
+
+
+
+<h3 id="-5"><a href="#-5" class="headerlink" title=""></a><span class='p blue'>全局极小点</span></h3><details green open><summary> <p>定理</p> </summary>
+              <div class='content'>
+              <p>设$S$是一个凸集，$f(x):S \rightarrow R$是一个凸函数，且$\bar{x}$是$f(x)$一个局部极小点</p><p>那么$\bar{x}$是$f(x)$在$S$上一个全局极小点。</p>
+              </div>
+            </details>
+
+
+
+<h3 id="-6"><a href="#-6" class="headerlink" title=""></a><span class='p blue'>凸函数证明</span></h3><details green open><summary> <p>定理一</p> </summary>
+              <div class='content'>
+              <p>设$S$是一个非空开凸集，$f(x):S \rightarrow R$ 可微</p><p>当且仅当$f(x)$ 满足下述梯度不等式：</p><p>$$f(y) \ge f(x) + \nabla f(x)^t(y-x) \quad \forall x,y \in S$$</p><p>$f(x)$ 是一个凸函数。</p><div class="note"><p>必要性由凸函数定义证得</p></div>
+              </div>
+            </details>
+
+<details yellow open><summary> <p>定理二</p> </summary>
+              <div class='content'>
+              <p>设$S$是一个非空开凸集，$f(x):S \rightarrow R$ 二次可微，$H(x)$表示函数 $f(x)$ 的海森矩阵；</p><p>当且仅当对任意$x\in S$满足 $H(x)$ 半正定</p><p>$f(x)$ 是一个凸函数。</p>
+              </div>
+            </details>
+
+
+
+
+
+<h3 id="-7"><a href="#-7" class="headerlink" title=""></a><span class='p blue'>结合</span></h3><details green open><summary> <p>定理</p> </summary>
+              <div class='content'>
+              <p><strong>设$f(x):X \rightarrow R$ 是X上的可微凸函数，那么$\bar{x} \in X$是一个全局极小点当且仅当$\nabla f(\bar{x})=0$。</strong></p>
+              </div>
+            </details>
       
     </div>
     
-      
-        <div class="button readmore">
-          <a href="/2020/08/13/JavaSE/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
       
     
   </section>
@@ -646,6 +745,59 @@
     
     <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
     
+    
+      <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
     
 
   
